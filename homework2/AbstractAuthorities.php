@@ -3,8 +3,15 @@
 /**
  * Class AbstractAuthorities
  */
-abstract class AbstractAuthorities {
+abstract class AbstractAuthorities
+{
+    /**
+     * @var
+     */
     protected $ministry;
+    /**
+     * @var
+     */
     protected $amount;
 
     /**
@@ -24,5 +31,4 @@ abstract class AbstractAuthorities {
     }
 
 
-
-} 
+}

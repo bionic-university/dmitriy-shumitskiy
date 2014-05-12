@@ -41,14 +41,6 @@ class Government extends AbstractAuthorities
      * @var
      */
     private $medicine;
-    /**
-     * @var
-     */
-    private $ministry;
-    /**
-     * @var
-     */
-    private $amount;
 
     /**
      * @param $ministry
@@ -56,8 +48,8 @@ class Government extends AbstractAuthorities
      */
     function __construct($ministry, $amount)
     {
-            $this->ministry = $ministry;
-            $this->amount = $amount;
+        $this->ministry = $ministry;
+        $this->amount = $amount;
     }
 
     /**
@@ -123,7 +115,8 @@ class Government extends AbstractAuthorities
         return $this->paperType;
     }
 
-    public function setBudget($taxes){
+    public function setBudget($taxes)
+    {
         $this->medicine = 0.3 * $taxes;
         $this->science = 0.1 * $taxes;
         $this->pensions = 0.2 * $taxes;

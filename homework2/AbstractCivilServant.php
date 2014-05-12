@@ -5,11 +5,29 @@
  */
 abstract class AbstractCivilServant
 {
+    /**
+     * @var
+     */
     protected $name;
+    /**
+     * @var
+     */
     protected $age;
+    /**
+     * @var
+     */
     protected $gender;
+    /**
+     * @var
+     */
     protected $education;
+    /**
+     * @var
+     */
     protected $experience;
+    /**
+     * @var
+     */
     protected $citizenship;
 
     /**

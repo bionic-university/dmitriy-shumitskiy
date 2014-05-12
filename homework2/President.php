@@ -41,6 +41,10 @@ class President extends AbstractCivilServant
      * @var array
      */
     private $stuffForPublic = [];
+    /**
+     * @var array
+     */
+    private $refuseLow = [];
 
     /**
      * @param $name
@@ -234,9 +238,34 @@ class President extends AbstractCivilServant
     /**
      * @param PrimeMinister $object
      */
-    public  function setMinisters(PrimeMinister $object)
+    public function setMinisters(PrimeMinister $object)
     {
-        echo($object->getMinisters());
-        array_push($object->getMinisters(), "approved");
+        array_push($object->ministers, [$object->getMinistersPeople(), $object->getMinistry(), "approved"]);
     }
+
+    /**
+     * @param Supreme $object
+     */
+    public function setLow(Supreme $object)
+    {
+        echo("Read text of low, to sign it press YES or NO to refuse:\n");
+        $b = fgets(STDIN, 255);
+        $b = trim($b);
+        if ($b == 'YES') {
+            array_push($object->low, [$object->getText(), $object->getText(), 'approved']);
+        } elseif ($b == 'NO') {
+            array_push($this->refuseLow, [$object->getText(), $object->getText(), 'approved']);
+        } else {
+            echo('Press YES or NO.');
+        }
+    }
+
+    /**
+     * @return array
+     */
+    public function getRefuseLow()
+    {
+        var_dump($this->refuseLow);
+    }
+
 }

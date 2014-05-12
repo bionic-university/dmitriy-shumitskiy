@@ -3,10 +3,29 @@
 /**
  * Class PrimeMinister
  */
-class PrimeMinister extends AbstractCivilServant{
-    private $ministers = [];
-    public function setGovernment($ministers, $ministry){
-        array_push($this->ministers, [$ministry, $ministers]);
+class PrimeMinister extends AbstractCivilServant
+{
+    /**
+     * @var array
+     */
+    public $ministers = [];
+    /**
+     * @var
+     */
+    private $ministersPeople;
+    /**
+     * @var
+     */
+    private $ministry;
+
+    /**
+     * @param $ministers
+     * @param $ministry
+     */
+    public function setGovernment($ministers, $ministry)
+    {
+        $this->ministersPeople = $ministers;
+        $this->ministry = $ministry;
     }
 
     /**
@@ -17,5 +36,19 @@ class PrimeMinister extends AbstractCivilServant{
         return $this->ministers;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getMinistersPeople()
+    {
+        return $this->ministersPeople;
+    }
 
+    /**
+     * @return mixed
+     */
+    public function getMinistry()
+    {
+        return $this->ministry;
+    }
 } 
