@@ -8,7 +8,7 @@ class Garage extends AbstractBuilding
     /**
      * @var
      */
-    private $rentPrice;
+    public $rentPrice;
 
     public function rentPay($timeOfRent)
     {
