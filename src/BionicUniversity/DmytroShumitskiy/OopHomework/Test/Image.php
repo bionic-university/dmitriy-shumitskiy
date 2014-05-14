@@ -31,28 +31,34 @@ class Image extends AbstractResizer implements ImageInterface
     /**
      * @var
      */
-    private $xLeft;
+    private $x1;
     /**
      * @var
      */
-    private $xRight;
+    private $x2;
     /**
      * @var
      */
-    private $yUp;
+    private $y2;
     /**
      * @var
      */
-    private $yDown;
+    private $y1;
+    /**
+     * @var
+     */
+    private $reduction;
 
     /**
      * @param $height
      * @param $width
+     * @param $reduction
      */
-    public function __constructor($height, $width)
+    public function __constructor($height, $width, $reduction)
     {
         $this->height = $height;
         $this->width = $width;
+        $this->reduction = $reduction;
     }
 
     /**
@@ -61,26 +67,34 @@ class Image extends AbstractResizer implements ImageInterface
      */
     public function thumbnail()
     {
-        $this->xLeft = $this->xCenter - 40;
-        $this->xRight = $this->xCenter + 40;
-        $this->$yUp = $this->yCenter + 40;
-        $this->$yDown = $this->yCenter - 40;
+        if ($this->width > $this->height) {
+            $this->x1 = $this->xCenter * ($this->y1 / 200);
+            $this->x2 = $this->xCenter * ($this->y2 / 200);
+            $this->$y2 = $this->yCenter + ($this->yCenter * $this->reduction);
+            $this->$y1 = $this->yCenter - ($this->yCenter * $this->reduction);
+        }
     }
 
+    /**
+     * @return mixed|void
+     */
     public function getCenter()
     {
         $this->xCenter = $this->width / 2;
         $this->yCenter = $this->height / 2;
     }
 
+    /**
+     * @return mixed|void
+     */
     public function paste()
     {
         array_push(
             $this->pasteImageCoordinate,
-            [$this->xLeft, $this->yUp],
-            [$this->xRight, $this->yUp,],
-            [$this->yDown, $this->xRight],
-            [$this->xLeft, $this->yDown]
+            [$this->x1, $this->y1],
+            [$this->x2, $this->y1],
+            [$this->x2, $this->y2],
+            [$this->x1, $this->y2]
         );
     }
 }
