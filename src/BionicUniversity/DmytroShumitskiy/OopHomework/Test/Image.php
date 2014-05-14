@@ -68,8 +68,8 @@ class Image extends AbstractResizer implements ImageInterface
     public function thumbnail()
     {
         if ($this->width > $this->height) {
-            $this->x1 = $this->xCenter * ($this->y1 / 200);
-            $this->x2 = $this->xCenter * ($this->y2 / 200);
+            $this->x1 = $this->xCenter * ($this->y1 / $this->xCenter);
+            $this->x2 = $this->xCenter * ($this->y2 / $this->xCenter);
             $this->$y2 = $this->yCenter + ($this->yCenter * $this->reduction);
             $this->$y1 = $this->yCenter - ($this->yCenter * $this->reduction);
         }
