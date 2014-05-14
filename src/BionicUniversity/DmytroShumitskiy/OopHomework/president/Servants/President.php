@@ -2,6 +2,8 @@
 namespace BionicUniversity\DmytroShumitskiy\OopHomework\President\Servants;
 
 use BionicUniversity\DmytroShumitskiy\OopHomework\President\AbstractClasess\AbstractCivilServant;
+use BionicUniversity\DmytroShumitskiy\OopHomework\President\Authorities\Government;
+use BionicUniversity\DmytroShumitskiy\OopHomework\President\Authorities\Supreme;
 
 /**
  * Class President
@@ -44,10 +46,6 @@ class President extends AbstractCivilServant
      * @var array
      */
     private $stuffForPublic = [];
-    /**
-     * @var array
-     */
-    private $refuseLow = [];
 
     /**
      * @param $name
@@ -247,28 +245,24 @@ class President extends AbstractCivilServant
     }
 
     /**
-     * @param Supreme $object
+     * @param Deputy $deputy
+     * @param Supreme $supreme
      */
-    public function setLow(Supreme $object)
+    public function setLow(Deputy $deputy, Supreme $supreme)
     {
-        echo("Read text of low, to sign it press YES or NO to refuse:\n");
-        $b = fgets(STDIN, 255);
-        $b = trim($b);
-        if ($b == 'YES') {
-            array_push($object->low, [$object->getText(), $object->getText(), 'approved']);
-        } elseif ($b == 'NO') {
-            array_push($this->refuseLow, [$object->getText(), $object->getText(), 'approved']);
+        if ($supreme->getVoteStatus() == 'true') {
+            echo("Read text of low, to sign it press YES or NO to refuse:\n");
+            $b = fgets(STDIN, 255);
+            $b = trim($b);
+            if ($b == 'YES') {
+                array_push($deputy->acceptedLow, $deputy->getNewLow(), "Sign by president $this->name");
+            } elseif ($b == 'NO') {
+                array_push($deputy->refusedLow, $deputy->getNewLow(), "Refused by President. $this->name");
+            } else {
+                echo('Press YES or NO.');
+            }
         } else {
-            echo('Press YES or NO.');
+            echo('Should be approved by Supreme.');
         }
     }
-
-    /**
-     * @return array
-     */
-    public function getRefuseLow()
-    {
-        var_dump($this->refuseLow);
-    }
-
 }

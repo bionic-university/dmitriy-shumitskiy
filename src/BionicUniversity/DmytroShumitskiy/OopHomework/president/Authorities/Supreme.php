@@ -2,62 +2,38 @@
 namespace BionicUniversity\DmytroShumitskiy\OopHomework\President\Authorities;
 
 use BionicUniversity\DmytroShumitskiy\OopHomework\President\AbstractClasess\AbstractAuthorities;
+use BionicUniversity\DmytroShumitskiy\OopHomework\President\Servants\Deputy;
 
 /**
  * Class Supreme
  */
 class Supreme extends AbstractAuthorities
 {
-    /**
-     * @var
-     */
-    private $number;
-    /**
-     * @var
-     */
-    private $text;
-    /**
-     * @var array
-     */
-    public $low = [];
+    private $voteStatus;
 
-    /**
-     * @param $amount
-     */
     public function __construct($amount)
     {
         $this->amount = $amount;
     }
 
-    public function setNewLow()
+    public function vote(Deputy $deputy, $voteStatus)
     {
-        echo("Enter low number\n");
-        $this->number = fgets(STDIN, 255);
-        echo("Enter Text\n");
-        $this->text = fgets(STDIN, 255);
-    }
-
-    /**
-     * @return array
-     */
-    public function getSignLow()
-    {
-        var_dump($this->low);
+        $this->voteStatus = $voteStatus;
+        if ($this->$voteStatus == 'true') {
+            array_push($deputy->acceptedLow, ['Approved by supreme but still need president sign']);
+        } elseif ($this->$voteStatus == 'false') {
+            array_push($deputy->refusedLow, ['Refused by Supreme']);
+        } else {
+            echo('Second argument should be true or false');
+        }
     }
 
     /**
      * @return mixed
      */
-    public function getNumber()
+    public function getVoteStatus()
     {
-        return $this->number;
+        return $this->voteStatus;
     }
 
-    /**
-     * @return mixed
-     */
-    public function getText()
-    {
-        return $this->text;
-    }
 } 
