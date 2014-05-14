@@ -1,5 +1,5 @@
 <?php
-namespace buildConfigs;
+namespace BionicUniversity\DmytroShumitskiy\OopHomework\House\buildConfigs;
 
 /**
  * Class BuildingAddress

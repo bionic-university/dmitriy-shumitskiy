@@ -1,4 +1,6 @@
 <?php
+namespace BionicUniversity\DmytroShumitskiy\OopHomework\House;
+use BionicUniversity\DmytroShumitskiy\OopHomework\House\buildConfigs as buildConfigs;
 
 /**
  * Class AbstractBuilding
@@ -23,7 +25,7 @@ abstract class AbstractBuilding
     public abstract function rentPay($timeOfRent);
 
     /**
-     * @param \buildConfigs\BuildingAddress $object
+     * @param buildConfigs\BuildingAddress $object
      */
     public function setAddress(buildConfigs\BuildingAddress $object)
     {
@@ -34,7 +36,7 @@ abstract class AbstractBuilding
     }
 
     /**
-     * @param \buildConfigs\BuildingParams $object
+     * @param buildConfigs\BuildingParams $object
      */
     public function setBuildingParams(buildConfigs\BuildingParams $object)
     {

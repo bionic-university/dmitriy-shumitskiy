@@ -1,4 +1,5 @@
 <?php
+namespace BionicUniversity\DmytroShumitskiy\OopHomework\President\AbstractClasess;
 
 /**
  * Class AbstractAuthorities

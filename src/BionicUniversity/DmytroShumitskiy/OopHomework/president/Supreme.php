@@ -21,7 +21,7 @@ class Supreme extends AbstractAuthorities
     /**
      * @param $amount
      */
-    function __construct($amount)
+    public function __construct($amount)
     {
         $this->amount = $amount;
     }

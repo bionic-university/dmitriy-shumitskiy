@@ -1,8 +1,11 @@
 <?php
+namespace BionicUniversity\DmytroShumitskiy\OopHomework\President\Servants;
+
+use BionicUniversity\DmytroShumitskiy\OopHomework\President\AbstractClasess\AbstractCivilServant;
 
 /**
  * Class President
- * @package homework2
+ * @package President
  * "Класс ""Президент"", который умеет подписывать бумаги разных типов (к примеру, договора, контракты и заявления)
  * и отдавать определенные бумаги на доработку (только договора и контракты).
  * На вход подать строкой тип бумаги, на выходе - список действий, которые может сделать президент с ней. "
@@ -56,7 +59,7 @@ class President extends AbstractCivilServant
      * @param $citizenship
      * @param $term
      */
-    function __construct($name, $surname, $age, $gender, $education, $experience, $citizenship, $term)
+    public function __construct($name, $surname, $age, $gender, $education, $experience, $citizenship, $term)
     {
         $this->name = $name;
         $this->surname = $surname;
@@ -74,7 +77,7 @@ class President extends AbstractCivilServant
     public function getPaper(Government $object)
     {
         if ($object->getPaperType() == "Contract" or $object->getPaperType() == "Agreement" or $object->getPaperType(
-            ) == "Statement" or $object->getPaperType() == "Low" or $object->getPaperType() == "Act"
+            ) == "Statement" or $object->getPaperType() == "Act"
         ) {
             $this->readText($object);
         } else {

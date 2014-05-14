@@ -20,10 +20,6 @@ class Government extends AbstractAuthorities
     /**
      * @var
      */
-    private $godMode;
-    /**
-     * @var
-     */
     private $rework;
     /**
      * @var
@@ -46,7 +42,7 @@ class Government extends AbstractAuthorities
      * @param $ministry
      * @param $amount
      */
-    function __construct($ministry, $amount)
+    public function __construct($ministry, $amount)
     {
         $this->ministry = $ministry;
         $this->amount = $amount;
@@ -79,6 +75,9 @@ class Government extends AbstractAuthorities
         return $this->rework;
     }
 
+    /**
+     * Can push Contract, Act, Agreement, Statement document type only
+     */
     public function pushPaper()
     {
         echo("Enter paper type\n");
@@ -91,12 +90,6 @@ class Government extends AbstractAuthorities
     public function getPaperForRevision()
     {
         var_dump($this->forRevision);
-    }
-
-    public function setNedotorkannost()
-    {
-        $this->godMode = true;
-        echo('God mode activated.');
     }
 
     /**

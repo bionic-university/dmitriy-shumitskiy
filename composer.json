@@ -1,0 +1,13 @@
+{
+    "name": "accept/php_bionic",
+    "authors": [
+        {
+            "name": "Acceptto",
+            "email": "aaccept2010@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "*",
+        "symfony/class-loader": "*"
+    }
+}
