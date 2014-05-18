@@ -9,7 +9,7 @@ abstract class AbstractAuthorities
     /**
      * @var
      */
-    protected $ministry;
+    protected $name;
     /**
      * @var
      */
@@ -26,9 +26,9 @@ abstract class AbstractAuthorities
     /**
      * @return mixed
      */
-    public function getMinistry()
+    public function getName()
     {
-        return $this->ministry;
+        return $this->name;
     }
 
 

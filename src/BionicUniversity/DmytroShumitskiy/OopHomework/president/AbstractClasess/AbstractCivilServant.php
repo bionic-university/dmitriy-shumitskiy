@@ -30,6 +30,18 @@ abstract class AbstractCivilServant
      * @var
      */
     protected $citizenship;
+    /**
+     * @var
+     */
+    protected $godMode;
+    /**
+     * @var array
+     */
+    protected $stuff = [];
+    /**
+     * @var array
+     */
+    protected $stuffForPublic = [];
 
     /**
      * @return mixed
@@ -77,6 +89,12 @@ abstract class AbstractCivilServant
     public function getName()
     {
         return $this->name;
+    }
+
+    public function setNedotorkannost()
+    {
+        $this->godMode = true;
+        echo('God mode activated.');
     }
 
 }

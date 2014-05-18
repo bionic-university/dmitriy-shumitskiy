@@ -42,17 +42,19 @@ class Government extends AbstractAuthorities
     private $medicine;
 
     /**
-     * @param $ministry
+     * @param $name
      * @param $amount
      */
-    public function __construct($ministry, $amount)
+    public function __construct($name, $amount)
     {
-        $this->ministry = $ministry;
+        $this->name = $name;
         $this->amount = $amount;
     }
 
     /**
      * @param Government $object
+     * Rework the document after President refuse
+     * and push to sign by President again
      */
     public function rework(Government $object)
     {
@@ -71,15 +73,11 @@ class Government extends AbstractAuthorities
     }
 
     /**
-     * @return mixed
-     */
-    public function getRework()
-    {
-        return $this->rework;
-    }
-
-    /**
-     * Can push Contract, Act, Agreement, Statement document type only
+     * Create new document of type : Contract, Act, Agreement, Statement,
+     * then send to getPaper() method in President class,
+     * then President read the text by readTest() method and make the choice or to sign or refused the paper,
+     * if the choice sign: sign with setSignature() method,
+     * if refused : return by rework() method to the Government rework() method
      */
     public function pushPaper()
     {
@@ -90,9 +88,31 @@ class Government extends AbstractAuthorities
         $this->paperType = trim($this->paperType);
     }
 
+    /**
+     * @param $taxes
+     */
+    public function setBudget($taxes)
+    {
+        $this->medicine = 0.3 * $taxes;
+        $this->science = 0.1 * $taxes;
+        $this->pensions = 0.2 * $taxes;
+        $this->salary = 0.4 * $taxes;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getRework()
+    {
+        return $this->rework;
+    }
+
+    /**
+     * @return array
+     */
     public function getPaperForRevision()
     {
-        var_dump($this->forRevision);
+        return $this->forRevision;
     }
 
     /**
@@ -110,14 +130,4 @@ class Government extends AbstractAuthorities
     {
         return $this->paperType;
     }
-
-    public function setBudget($taxes)
-    {
-        $this->medicine = 0.3 * $taxes;
-        $this->science = 0.1 * $taxes;
-        $this->pensions = 0.2 * $taxes;
-        $this->salary = 0.4 * $taxes;
-    }
-
-
 }

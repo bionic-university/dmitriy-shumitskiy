@@ -9,13 +9,26 @@ use BionicUniversity\DmytroShumitskiy\OopHomework\President\Servants\Deputy;
  */
 class Supreme extends AbstractAuthorities
 {
+    /**
+     * @var
+     */
     private $voteStatus;
 
+    /**
+     * @param $amount
+     */
     public function __construct($amount)
     {
         $this->amount = $amount;
     }
 
+    /**
+     * @param Deputy $deputy
+     * @param $voteStatus
+     * Vote for new low of the depute,
+     * to come into effect should be sign by President
+     * setLow() method in President class
+     */
     public function vote(Deputy $deputy, $voteStatus)
     {
         $this->voteStatus = $voteStatus;

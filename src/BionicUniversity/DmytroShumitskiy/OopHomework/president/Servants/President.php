@@ -4,6 +4,7 @@ namespace BionicUniversity\DmytroShumitskiy\OopHomework\President\Servants;
 use BionicUniversity\DmytroShumitskiy\OopHomework\President\AbstractClasess\AbstractCivilServant;
 use BionicUniversity\DmytroShumitskiy\OopHomework\President\Authorities\Government;
 use BionicUniversity\DmytroShumitskiy\OopHomework\President\Authorities\Supreme;
+use BionicUniversity\DmytroShumitskiy\OopHomework\President\InterfaceClasess\CivilServantInterface;
 
 /**
  * Class President
@@ -12,16 +13,12 @@ use BionicUniversity\DmytroShumitskiy\OopHomework\President\Authorities\Supreme;
  * и отдавать определенные бумаги на доработку (только договора и контракты).
  * На вход подать строкой тип бумаги, на выходе - список действий, которые может сделать президент с ней. "
  */
-class President extends AbstractCivilServant
+class President extends AbstractCivilServant implements CivilServantInterface
 {
     /**
      * @var
      */
     private $term;
-    /**
-     * @var
-     */
-    private $godMode;
     /**
      * @var
      */
@@ -38,14 +35,6 @@ class President extends AbstractCivilServant
      * @var array
      */
     private $paper = [];
-    /**
-     * @var array
-     */
-    private $stuff = [];
-    /**
-     * @var array
-     */
-    private $stuffForPublic = [];
 
     /**
      * @param $name
@@ -71,6 +60,7 @@ class President extends AbstractCivilServant
 
     /**
      * @param Government $object
+     * Get paper from Government which should be read and sign or refused
      */
     public function getPaper(Government $object)
     {
@@ -85,6 +75,8 @@ class President extends AbstractCivilServant
 
     /**
      * @param Government $object
+     * Read the Government paper and make decision rather to sign or refused
+     * Only papers of Agreement and Contract may be pushed for rework to Government
      */
     private function readText(Government $object)
     {
@@ -104,6 +96,7 @@ class President extends AbstractCivilServant
 
     /**
      * @param Government $object
+     * Sign the paper and insert into array
      */
     private function setSignature(Government $object)
     {
@@ -113,6 +106,7 @@ class President extends AbstractCivilServant
 
     /**
      * @param Government $object
+     * Push the paper for further rework by Government
      */
     public function rework(Government $object)
     {
@@ -147,9 +141,12 @@ class President extends AbstractCivilServant
         }
     }
 
+    /**
+     * @return array
+     */
     public function getWars()
     {
-        var_dump($this->war);
+        return $this->war;
     }
 
     /**
@@ -186,12 +183,6 @@ class President extends AbstractCivilServant
         } else {
             echo('Go to hell! :)');
         }
-    }
-
-    public function setNedotorkannost()
-    {
-        $this->godMode = true;
-        echo('God mode activated.');
     }
 
     /**
@@ -238,15 +229,17 @@ class President extends AbstractCivilServant
 
     /**
      * @param PrimeMinister $object
+     * Approve the head of Ministry which set the Prime Minister
      */
-    public function setMinisters(PrimeMinister $object)
+    public function approveMinistryHead(PrimeMinister $object)
     {
-        array_push($object->ministers, [$object->getMinistersPeople(), $object->getMinistry(), "approved"]);
+        array_push($object->approvedMinisters, [$object->getHeadOfMinistry(), $object->getMinistry(), "approved"]);
     }
 
     /**
      * @param Deputy $deputy
      * @param Supreme $supreme
+     * Sign or refused low accepted by Supreme
      */
     public function setLow(Deputy $deputy, Supreme $supreme)
     {

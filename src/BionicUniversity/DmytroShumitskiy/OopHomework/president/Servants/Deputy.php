@@ -2,21 +2,49 @@
 namespace BionicUniversity\DmytroShumitskiy\OopHomework\President\Servants;
 
 use BionicUniversity\DmytroShumitskiy\OopHomework\President\AbstractClasess\AbstractCivilServant;
+use BionicUniversity\DmytroShumitskiy\OopHomework\President\InterfaceClasess\CivilServantInterface;
 
 /**
  * Class Deputy
  * @package BionicUniversity\DmytroShumitskiy\OopHomework\President\Servants
  */
-class Deputy extends AbstractCivilServant
+class Deputy extends AbstractCivilServant implements CivilServantInterface
 {
+    /**
+     * @var
+     */
     private $party;
+    /**
+     * @var
+     */
     private $number;
+    /**
+     * @var
+     */
     private $text;
-    private $godMode;
+    /**
+     * @var array
+     */
     private $newLow = [];
-    public  $acceptedLow = [];
-    public  $refusedLow = [];
+    /**
+     * @var array
+     */
+    public $acceptedLow = [];
+    /**
+     * @var array
+     */
+    public $refusedLow = [];
 
+    /**
+     * @param $name
+     * @param $surname
+     * @param $age
+     * @param $gender
+     * @param $education
+     * @param $experience
+     * @param $citizenship
+     * @param $party
+     */
     public function __construct($name, $surname, $age, $gender, $education, $experience, $citizenship, $party)
     {
         $this->name = $name;
@@ -34,6 +62,11 @@ class Deputy extends AbstractCivilServant
         echo('Уважаемые избератели, я обещаю защищать ваши интересы и не воровать :)');
     }
 
+    /**
+     * Set new low by the depute, to come into effect
+     * should be accepted both by Supreme and President
+     * vote() method in Supreme class and setLow() method in President class
+     */
     public function setNewLow()
     {
         echo("Enter low number\n");
@@ -48,7 +81,7 @@ class Deputy extends AbstractCivilServant
      */
     public function getAcceptedLow()
     {
-        echo("Accepted lows by $this->name \n $this->acceptedLow");
+        echo("Accepted lows, author $this->name : \n $this->acceptedLow");
     }
 
     /**
@@ -56,7 +89,7 @@ class Deputy extends AbstractCivilServant
      */
     public function getRefusedLow()
     {
-        echo("Refused lows by $this->name \n $this->acceptedLow");
+        echo("Refused lows, author $this->name : \n $this->acceptedLow");
     }
 
     /**
@@ -67,10 +100,30 @@ class Deputy extends AbstractCivilServant
         return $this->newLow;
     }
 
-
-    public function setNedotorkannost()
+    /**
+     * @param $house
+     * @param $goldBaton
+     * @param $helicopter
+     * @param $money
+     */
+    public function makeSomeStuff($house, $goldBaton, $helicopter, $money)
     {
-        $this->godMode = true;
-        echo('God mode activated.');
+        array_push($this->stuff, $house, $goldBaton, $helicopter, $money);
     }
-} 
+
+    public function setDeclaration()
+    {
+        array_push(
+            $this->stuffForPublic,
+            '2 car model Lanos',
+            '1 flat with 1 rooms',
+            '2000grn per month income',
+            '15000grn savings on bank account'
+        );
+    }
+
+    public function getStuffForPublic()
+    {
+        return $this->stuffForPublic;
+    }
+}
