@@ -26,8 +26,8 @@ class PrimeMinister extends AbstractCivilServant implements CivilServantInterfac
     /**
      * @param $headOfMinistry
      * @param Government $object
-     * Set the head of ministry but to be legitimate
-     * need President approve : setMinisters() method in President class
+     *                           Set the head of ministry but to be legitimate
+     *                           need President approve : setMinisters() method in President class
      */
     public function setGovernmentHead($headOfMinistry, Government $object)
     {

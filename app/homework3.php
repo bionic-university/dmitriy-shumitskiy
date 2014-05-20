@@ -22,5 +22,3 @@ $ivanov = new Deputy('Ivan', 'Ivanov', 35, 'men', 'KPI', 10, 'UA', 'Svoboda');
 $president->setPrimeMinister($prime, 'Vasya', 59, 'UKR', 'NAU', 20, 'men');
 $prime->setGovernmentHead('Nikolay Illich', $scienceGovernment);
 $president->approveMinistryHead($prime);
-
-

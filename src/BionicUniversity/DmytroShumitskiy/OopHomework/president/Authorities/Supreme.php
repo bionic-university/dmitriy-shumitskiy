@@ -24,10 +24,10 @@ class Supreme extends AbstractAuthorities
 
     /**
      * @param Deputy $deputy
-     * @param $voteStatus
-     * Vote for new low of the depute,
-     * to come into effect should be sign by President
-     * setLow() method in President class
+     *                       @param $voteStatus
+     *                       Vote for new low of the depute,
+     *                       to come into effect should be sign by President
+     *                       setLow() method in President class
      */
     public function vote(Deputy $deputy, $voteStatus)
     {
@@ -49,4 +49,4 @@ class Supreme extends AbstractAuthorities
         return $this->voteStatus;
     }
 
-} 
+}

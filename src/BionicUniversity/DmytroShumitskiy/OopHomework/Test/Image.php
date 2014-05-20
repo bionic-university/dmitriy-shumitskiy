@@ -72,6 +72,16 @@ class Image extends AbstractResizer implements ImageInterface
             $this->x2 = $this->xCenter * ($this->y2 / $this->xCenter);
             $this->$y2 = $this->yCenter + ($this->yCenter * $this->reduction);
             $this->$y1 = $this->yCenter - ($this->yCenter * $this->reduction);
+        } elseif ($this->width < $this->height) {
+            $this->x1 = $this->xCenter - ($this->xCenter * $this->reduction);
+            $this->x2 = $this->xCenter + ($this->xCenter * $this->reduction);
+            $this->$y2 = $this->yCenter * ($this->x2 / $this->yCenter);
+            $this->$y1 = $this->yCenter * ($this->x1 / $this->yCenter);
+        } elseif ($this->width == $this->height) {
+            $this->x1 = $this->xCenter - ($this->xCenter * $this->reduction);
+            $this->x2 = $this->xCenter + ($this->xCenter * $this->reduction);
+            $this->$y2 = $this->yCenter + ($this->yCenter * $this->reduction);
+            $this->$y1 = $this->yCenter - ($this->yCenter * $this->reduction);
         }
     }
 

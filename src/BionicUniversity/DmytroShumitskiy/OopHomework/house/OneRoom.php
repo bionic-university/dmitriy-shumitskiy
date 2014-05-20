@@ -39,4 +39,4 @@ class OneRoom extends BlockOfFlats
         $this->pay = $this->pay + 50;
     }
 
-} 
+}

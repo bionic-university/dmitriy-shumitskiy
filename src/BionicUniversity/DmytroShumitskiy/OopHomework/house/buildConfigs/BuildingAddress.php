@@ -29,4 +29,4 @@ class BuildingAddress
         $this->state = $state;
     }
 
-} 
+}

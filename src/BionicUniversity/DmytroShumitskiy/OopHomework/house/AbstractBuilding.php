@@ -22,7 +22,7 @@ abstract class AbstractBuilding
     protected $state;
     protected $timeOfRent;
 
-    public abstract function rentPay($timeOfRent);
+    abstract public function rentPay($timeOfRent);
 
     /**
      * @param buildConfigs\BuildingAddress $object
@@ -48,4 +48,4 @@ abstract class AbstractBuilding
 
     }
 
-} 
+}

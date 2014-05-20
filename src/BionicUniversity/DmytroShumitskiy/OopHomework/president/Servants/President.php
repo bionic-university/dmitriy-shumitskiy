@@ -60,7 +60,7 @@ class President extends AbstractCivilServant implements CivilServantInterface
 
     /**
      * @param Government $object
-     * Get paper from Government which should be read and sign or refused
+     *                           Get paper from Government which should be read and sign or refused
      */
     public function getPaper(Government $object)
     {
@@ -75,8 +75,8 @@ class President extends AbstractCivilServant implements CivilServantInterface
 
     /**
      * @param Government $object
-     * Read the Government paper and make decision rather to sign or refused
-     * Only papers of Agreement and Contract may be pushed for rework to Government
+     *                           Read the Government paper and make decision rather to sign or refused
+     *                           Only papers of Agreement and Contract may be pushed for rework to Government
      */
     private function readText(Government $object)
     {
@@ -96,7 +96,7 @@ class President extends AbstractCivilServant implements CivilServantInterface
 
     /**
      * @param Government $object
-     * Sign the paper and insert into array
+     *                           Sign the paper and insert into array
      */
     private function setSignature(Government $object)
     {
@@ -106,7 +106,7 @@ class President extends AbstractCivilServant implements CivilServantInterface
 
     /**
      * @param Government $object
-     * Push the paper for further rework by Government
+     *                           Push the paper for further rework by Government
      */
     public function rework(Government $object)
     {
@@ -164,12 +164,12 @@ class President extends AbstractCivilServant implements CivilServantInterface
 
     /**
      * @param PrimeMinister $object
-     * @param $name
-     * @param $age
-     * @param $citizenship
-     * @param $education
-     * @param $experience
-     * @param $gender
+     *                              @param $name
+     *                              @param $age
+     *                              @param $citizenship
+     *                              @param $education
+     *                              @param $experience
+     *                              @param $gender
      */
     public function setPrimeMinister(PrimeMinister $object, $name, $age, $citizenship, $education, $experience, $gender)
     {
@@ -229,7 +229,7 @@ class President extends AbstractCivilServant implements CivilServantInterface
 
     /**
      * @param PrimeMinister $object
-     * Approve the head of Ministry which set the Prime Minister
+     *                              Approve the head of Ministry which set the Prime Minister
      */
     public function approveMinistryHead(PrimeMinister $object)
     {
@@ -237,9 +237,9 @@ class President extends AbstractCivilServant implements CivilServantInterface
     }
 
     /**
-     * @param Deputy $deputy
+     * @param Deputy  $deputy
      * @param Supreme $supreme
-     * Sign or refused low accepted by Supreme
+     *                         Sign or refused low accepted by Supreme
      */
     public function setLow(Deputy $deputy, Supreme $supreme)
     {

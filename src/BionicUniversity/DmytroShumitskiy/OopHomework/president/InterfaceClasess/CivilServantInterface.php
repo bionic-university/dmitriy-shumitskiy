@@ -16,4 +16,4 @@ interface CivilServantInterface
 
     public function getStuffForPublic();
 
-} 
+}

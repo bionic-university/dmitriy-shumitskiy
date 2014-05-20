@@ -23,7 +23,6 @@ class Garage extends AbstractBuilding
 
     public function securityPrice($timeOfRen)
     {
-
         return $timeOfRen * 400;
 
     }

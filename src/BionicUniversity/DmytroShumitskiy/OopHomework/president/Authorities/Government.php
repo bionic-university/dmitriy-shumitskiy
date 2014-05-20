@@ -53,8 +53,8 @@ class Government extends AbstractAuthorities
 
     /**
      * @param Government $object
-     * Rework the document after President refuse
-     * and push to sign by President again
+     *                           Rework the document after President refuse
+     *                           and push to sign by President again
      */
     public function rework(Government $object)
     {

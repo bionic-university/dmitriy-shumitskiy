@@ -32,4 +32,4 @@ class BuildingParams
         $this->rooms = $rooms;
     }
 
-} 
+}

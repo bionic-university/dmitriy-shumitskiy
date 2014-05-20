@@ -31,5 +31,4 @@ abstract class AbstractAuthorities
         return $this->name;
     }
 
-
 }

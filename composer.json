@@ -8,6 +8,7 @@
     ],
     "require": {
         "phpunit/phpunit": "*",
-        "symfony/class-loader": "*"
+        "symfony/class-loader": "*",
+        "h4cc/phpqatools": "*"
     }
 }

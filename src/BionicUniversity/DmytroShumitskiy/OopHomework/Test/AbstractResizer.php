@@ -1,7 +1,6 @@
 <?php
 namespace BionicUniversity\DmytroShumitskiy\OopHomework\Test;
 
-
 abstract class AbstractResizer
 {
     /**
@@ -13,10 +12,10 @@ abstract class AbstractResizer
     /**
      * @return mixed
      */
-    abstract  function paste();
+    abstract public function paste();
 
     /**
      * @return mixed
      */
-    abstract function getCenter();
-} 
+    abstract public function getCenter();
+}

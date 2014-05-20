@@ -32,4 +32,4 @@ class Parking extends Garage
         $this->rentPrice = $this->rentPrice + 50;
     }
 
-} 
+}
