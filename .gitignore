@@ -3,3 +3,7 @@
 
 /vendor/
 /.vagrant/
+
+app/build
+coverage
+cache.properties
