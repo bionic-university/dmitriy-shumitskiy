@@ -1,9 +1,7 @@
 .idea/
 .DS_Store
-
 /vendor/
 /.vagrant/
-
 app/build
 coverage
 cache.properties
