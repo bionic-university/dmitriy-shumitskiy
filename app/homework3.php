@@ -11,10 +11,10 @@ use BionicUniversity\DmytroShumitskiy\OopHomework\President\Servants\PrimeMinist
  * Create Objects
  */
 $supreme = new Supreme(400);
-$president = new President('Ivan', 'Mechylin', 43, 'men', 'Aviation University', 10, 'UA', 2);
+$president = new President('Ivan Mechylin', 43, 'men', 'Aviation University', 10, 'UA', 2);
 $scienceGovernment = new Government('Science', 10);
 $prime = new PrimeMinister();
-$ivanov = new Deputy('Ivan', 'Ivanov', 35, 'men', 'KPI', 10, 'UA', 'Svoboda');
+$ivanov = new Deputy('Ivan Ivanov', 35, 'men', 'KPI', 10, 'UA', 'Svoboda');
 
 /**
  * Methods

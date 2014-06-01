@@ -38,7 +38,6 @@ class President extends AbstractCivilServant implements CivilServantInterface
 
     /**
      * @param $name
-     * @param $surname
      * @param $age
      * @param $gender
      * @param $education
@@ -46,10 +45,9 @@ class President extends AbstractCivilServant implements CivilServantInterface
      * @param $citizenship
      * @param $term
      */
-    public function __construct($name, $surname, $age, $gender, $education, $experience, $citizenship, $term)
+    public function __construct($name, $age, $gender, $education, $experience, $citizenship, $term)
     {
         $this->name = $name;
-        $this->surname = $surname;
         $this->age = $age;
         $this->gender = $gender;
         $this->education = $education;

@@ -35,6 +35,10 @@ abstract class AbstractCivilServant
      */
     protected $godMode;
     /**
+     * @var
+     */
+    protected  $party;
+    /**
      * @var array
      */
     protected $stuff = [];
@@ -96,5 +100,14 @@ abstract class AbstractCivilServant
         $this->godMode = true;
         echo('God mode activated.');
     }
+
+    /**
+     * @return mixed
+     */
+    public function getParty()
+    {
+        return $this->party;
+    }
+
 
 }

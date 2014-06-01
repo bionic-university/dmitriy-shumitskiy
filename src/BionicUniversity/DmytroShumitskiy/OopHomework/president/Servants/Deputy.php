@@ -13,10 +13,6 @@ class Deputy extends AbstractCivilServant implements CivilServantInterface
     /**
      * @var
      */
-    private $party;
-    /**
-     * @var
-     */
     private $number;
     /**
      * @var
@@ -37,7 +33,6 @@ class Deputy extends AbstractCivilServant implements CivilServantInterface
 
     /**
      * @param $name
-     * @param $surname
      * @param $age
      * @param $gender
      * @param $education
@@ -45,10 +40,9 @@ class Deputy extends AbstractCivilServant implements CivilServantInterface
      * @param $citizenship
      * @param $party
      */
-    public function __construct($name, $surname, $age, $gender, $education, $experience, $citizenship, $party)
+    public function __construct($name, $age, $gender, $education, $experience, $citizenship, $party)
     {
         $this->name = $name;
-        $this->surname = $surname;
         $this->age = $age;
         $this->gender = $gender;
         $this->education = $education;
