@@ -109,5 +109,21 @@ abstract class AbstractCivilServant
         return $this->party;
     }
 
+    /**
+     * @return array
+     */
+    public function getStuff()
+    {
+        return $this->stuff;
+    }
+
+    /**
+     * @return array
+     */
+    public function getStuffForPublic()
+    {
+        return $this->stuffForPublic;
+    }
+
 
 }
