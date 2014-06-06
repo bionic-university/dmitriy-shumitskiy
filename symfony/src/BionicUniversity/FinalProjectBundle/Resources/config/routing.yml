@@ -1,0 +1,13 @@
+bionic_university_final_project_homepage:
+    pattern:  /
+    defaults: { _controller: BionicUniversityFinalProjectBundle:Main:index }
+    requirements:
+        _method:  GET
+
+account_register:
+    path:     /register
+    defaults: { _controller: BionicUniversityFinalProjectBundle:Account:register }
+
+account_create:
+    path:     /register/create
+    defaults: { _controller: BionicUniversityFinalProjectBundle:Account:create }

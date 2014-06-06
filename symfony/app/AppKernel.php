@@ -18,6 +18,8 @@ class AppKernel extends Kernel
             new Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle(),
 
             new BionicUniversity\StudentBundle\BionicUniversityStudentBundle(),
+            new BionicUniversity\FinalProjectBundle\BionicUniversityFinalProjectBundle(),
+
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
