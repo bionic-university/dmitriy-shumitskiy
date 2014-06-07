@@ -5,6 +5,12 @@ parameters:
     database_name:     symfony
     database_user:     root
     database_password: ~
+    database_driver2:   pdo_mysql
+    database_host2:     127.0.0.1
+    database_port2:     ~
+    database_name2:     symfony
+    database_user2:     root
+    database_password2: ~
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
