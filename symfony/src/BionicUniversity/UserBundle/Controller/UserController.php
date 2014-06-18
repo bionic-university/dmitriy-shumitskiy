@@ -4,7 +4,7 @@ namespace BionicUniversity\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class User extends Controller
+class UserController extends Controller
 {
     public function indexAction()
     {

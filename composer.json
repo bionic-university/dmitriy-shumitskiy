@@ -7,8 +7,6 @@
         }
     ],
     "require": {
-        "phpunit/phpunit": "*",
-        "h4cc/phpqatools": "*",
-        "symfony/symfony": "*"
+        "phpunit/phpunit": "*"
     }
 }

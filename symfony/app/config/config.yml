@@ -73,15 +73,16 @@ doctrine:
         auto_generate_proxy_classes: "%kernel.debug%"
         entity_managers:
             default:
-                naming_strategy: doctrine.orm.naming_strategy.underscore
+               # naming_strategy: doctrine.orm.naming_strategy.underscore
                 connection: default
                 mappings:
-                    BionicUniversityStudentBundle:  ~
+                    BionicUniversityFinalProjectBundle: ~
+                    BionicUniversityUserBundle: ~
             project:
                 naming_strategy: doctrine.orm.naming_strategy.underscore
                 connection: project
                 mappings:
-                    BionicUniversityFinalProjectBundle: ~
+                    BionicUniversityStudentBundle:  ~
 
 # Swiftmailer Configuration
 swiftmailer:

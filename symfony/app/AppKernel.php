@@ -19,7 +19,7 @@ class AppKernel extends Kernel
 
             new BionicUniversity\StudentBundle\BionicUniversityStudentBundle(),
             new BionicUniversity\FinalProjectBundle\BionicUniversityFinalProjectBundle(),
-
+            new BionicUniversity\UserBundle\BionicUniversityUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {

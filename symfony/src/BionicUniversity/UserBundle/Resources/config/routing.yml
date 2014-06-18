@@ -1,0 +1,17 @@
+bionic_university_user_homepage:
+    pattern:  /
+    defaults: { _controller: BionicUniversityUserBundle:User:index }
+    requirements:
+        _method:  GET
+bionic_university_user_register:
+    pattern:  /register
+    defaults: { _controller: BionicUniversityUserBundle:UsersRegistration:register }
+bionic_university_user_login:
+  pattern:   /login
+  defaults:  { _controller: BionicUniversityUserBundle:Login:login }
+login_check:
+  pattern:   /login_check
+bionic_university_user_logout:
+  pattern: /logout
+
+

@@ -1,0 +1,29 @@
+BionicUniversity\UserBundle\Entity\User:
+    type: entity
+    table: users
+    repositoryClass: BionicUniversity\UserBundle\Entity\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        email:
+            type: string
+            length: 255
+            unique: true
+        password:
+            type: string
+            length: 255
+        salt:
+            type: string
+            length: 255
+        role:
+            type: array
+
+    oneToMany:
+        posts:
+            targetEntity: BionicUniversity\UserBundle\Entity\Post
+            mappedBy: author
+    lifecycleCallbacks: {  }

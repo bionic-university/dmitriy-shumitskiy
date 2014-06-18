@@ -8,6 +8,7 @@ use BionicUniversity\FinalProjectBundle\Form\Model\Registration;
 use Symfony\Component\HttpFoundation\Request;
 
 class AccountController extends Controller
+
 {
     public function registerAction()
     {

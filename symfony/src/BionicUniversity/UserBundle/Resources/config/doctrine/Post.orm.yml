@@ -1,0 +1,30 @@
+BionicUniversity\UserBundle\Entity\Post:
+    type: entity
+    table: null
+    repositoryClass: BionicUniversity\UserBundle\Entity\PostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        text:
+            type: text
+        theme:
+            type: string
+            length: 255
+        startTime:
+            type: datetime
+        attachment:
+            type: blob
+        postTime:
+            type: date
+        phone:
+            type: string
+
+    manyToOne:
+        author:
+            targetEntity: BionicUniversity\UserBundle\Entity\User
+            inversedBy: posts
+    lifecycleCallbacks: {  }
