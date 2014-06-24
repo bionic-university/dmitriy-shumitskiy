@@ -18,22 +18,25 @@ class UsersRegistrationType extends AbstractType
                 'label' => 'Ваш Email',
                 'attr' => array(
                     'placeholder' => 'Адрес электронной почты',
+                    'class' => 'reg1',
                 ),
+                'label_attr' => array('class' => 'regb1')
             ));
         $builder->add('password', 'repeated', array(
                 'type' => 'password',
                 'invalid_message' => 'The password fields must match.',
-                'options' => array('attr' => array('class' => 'password-field','placeholder' => 'Пароль')),
+                'options' => array(
+                    'attr' => array('class' => 'password-field',
+                    'placeholder' => 'Пароль')),
                 'required' => true,
-                'first_options'  => array('label' => 'Пароль'),
-                'second_options' => array('label' => 'Повторите пароль'),
+                'first_options'  => array('label' => 'Пароль','label_attr' => array('class' => 'regb2')),
+                'second_options' => array('label' => 'Повторите пароль','label_attr' => array('class' => 'regb2')),
             ));
-        $builder->add(
-            'Accept',
-            'checkbox',
-            array('property_path' => 'termsAccepted')
-        );
-        $builder->add('Register', 'submit');
+        $builder->add('Register', 'submit',
+            array(
+                'label' => 'Регистрация',
+                'attr' => array('class' => 'reg4')
+            ));
     }
 
     /**

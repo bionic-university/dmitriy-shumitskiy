@@ -1,18 +1,12 @@
 <html>
 {% block head %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Registration</title>
-    <style>
-        body{
-            background-color: #31e8fa;
-        }
-        table
-        {
-            margin-top: 10%;
-            width: 50%;
-            height: 50%;
-        }
-    </style>
+    <title>Вход</title>
+    {% block stylesheets %}
+        {% stylesheets 'bundles/bionicuniversityuser/css/main.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endblock %}
 {% endblock %}
 {% block content %}
     <h1 align="center" >Вход</h1>
@@ -21,9 +15,9 @@
                 <br><br>{% if error %}
                 <div>{{ error.message }}</div>
                 {% endif %}
-                <form action="{{ path('login_check') }}" method="post">
+                <form action="{{ path('login_check') }}" method="post" class="log">
                     <label for="email">Почта:</label>
-                    <input type="text" id="email" name="_email" value="{{last_email}}" />
+                    <input type="email" id="email" name="_email" value="{{last_email}}" />
 
 
                     <label for="password">Пароль:</label>

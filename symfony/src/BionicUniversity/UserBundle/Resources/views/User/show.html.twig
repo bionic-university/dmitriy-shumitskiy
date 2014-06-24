@@ -1,0 +1,45 @@
+{% extends "BionicUniversityUserBundle::base.html.twig" %}
+{% block content -%}
+    <table class="record_properties" bgcolor= "#c0c0c0" cellspacing= "0" cellpadding="5" border="1" align="center">
+        <tbody>
+        <tr>
+            <th>Тематика</th>
+            <td>{{ entity.subjects }}</td>
+        </tr>
+        <tr>
+            <th>Тема</th>
+            <td>{{ entity.theme }}</td>
+        </tr>
+        <tr>
+            <th>Текст</th>
+            <td>{{ entity.text }}</td>
+        </tr>
+        <tr>
+            <th>Телефон для связи</th>
+            <td>{{ entity.phone }}</td>
+        </tr>
+        <tr>
+            <th>Дата и время начала</th>
+            <td>{{ entity.startTime|date('Y-m-d H:i:s') }}</td>
+        </tr>
+        <tr>
+            <th>Автор</th>
+            <td>{{ entity.author }}</td>
+        </tr>
+
+        </tbody>
+
+    </table>
+    <div align = "center">
+        <ul>
+            {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+                <li>
+                    <a href="{{ path('user_go', { 'id': entity.id }) }}">Я иду!</a>
+                </li>
+                <li>
+                    <a href="{{ path('user_subscribe', { 'id': entity.id }) }}">Подписаться на автора</a>
+                </li>
+            {% endif %}
+        </ul>
+    </div>
+{% endblock %}

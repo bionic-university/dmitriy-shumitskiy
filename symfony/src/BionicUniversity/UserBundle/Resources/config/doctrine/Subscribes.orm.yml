@@ -1,0 +1,20 @@
+BionicUniversity\UserBundle\Entity\Subscribes:
+    type: entity
+    table: null
+    repositoryClass: BionicUniversity\UserBundle\Entity\SubscribesRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        subscriberId:
+            type: integer
+        authorId:
+            type: integer
+    #manyToOne:
+       # subscriberId:
+            #targetEntity: BionicUniversity\UserBundle\Entity\User
+            #inversedBy: subscribe
+    lifecycleCallbacks: {  }

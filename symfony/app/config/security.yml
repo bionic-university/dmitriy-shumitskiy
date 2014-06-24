@@ -1,10 +1,12 @@
 security:
     hide_user_not_found: false
     encoders:
+        Symfony\Component\Security\Core\User\User: plaintext
         BionicUniversity\UserBundle\Entity\User:
             algorithm: sha512
             encode-as-base64: true
             iterations: 5000
+
 
     role_hierarchy:
         ROLE_ADMIN:       ROLE_USER
@@ -14,8 +16,8 @@ security:
         in_memory:
             memory:
                 users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                    user@user:  { password: pass, roles: [ 'ROLE_USER' ] }
+                    admin@admin: { password: 1994, roles: [ 'ROLE_ADMIN' ] }
         user:
             entity:
                 class:              BionicUniversity\UserBundle\Entity\User
@@ -51,3 +53,4 @@ security:
          - { path: ^/user/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
          - { path: ^/user/register, roles: IS_AUTHENTICATED_ANONYMOUSLY }
          - { path: ^/user, roles: IS_AUTHENTICATED_FULLY }
+         - { path: /admin/.*, role: ROLE_ADMIN }

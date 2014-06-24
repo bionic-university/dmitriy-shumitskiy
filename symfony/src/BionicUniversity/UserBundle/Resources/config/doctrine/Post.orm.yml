@@ -16,12 +16,19 @@ BionicUniversity\UserBundle\Entity\Post:
             length: 255
         startTime:
             type: datetime
-        attachment:
-            type: blob
+        #attachment:
+            #type: blob
         postTime:
             type: date
         phone:
             type: string
+        moderate:
+            type: boolean
+            nullable: true
+        subjects:
+            type: string
+        userGo:
+            type: integer
 
     manyToOne:
         author:

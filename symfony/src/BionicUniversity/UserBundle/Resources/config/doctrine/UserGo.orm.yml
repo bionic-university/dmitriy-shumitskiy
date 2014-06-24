@@ -1,0 +1,19 @@
+BionicUniversity\UserBundle\Entity\UserGo:
+    type: entity
+    table: null
+    repositoryClass: BionicUniversity\UserBundle\Entity\UserGoRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        userId:
+            type: integer
+        postId:
+            type: integer
+        status:
+            type: boolean
+            nullable: true
+    lifecycleCallbacks: {  }

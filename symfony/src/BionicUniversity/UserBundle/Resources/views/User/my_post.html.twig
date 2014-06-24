@@ -1,0 +1,31 @@
+{% extends "BionicUniversityUserBundle::base.html.twig" %}
+{% block content -%}
+    <h1>Публикация</h1>
+
+    <table class="record_properties" bgcolor= "#c0c0c0" cellspacing= "0" cellpadding="5" border="1" align="center">
+        <tbody>
+    {% for entity in entities %}
+        <tr>
+            <th>Тематика</th>
+            <td>{{ entity.sybjects }}</td>
+        </tr>
+        <tr>
+            <th>Тема</th>
+            <td>{{ entity.theme }}</td>
+        </tr>
+        <tr>
+            <th>Текст</th>
+            <td>{{ entity.text }}</td>
+        </tr>
+        <tr>
+            <th>Телефон для связи</th>
+            <td>{{ entity.phone }}</td>
+        </tr>
+        <tr>
+            <th>Дата и время начала</th>
+            <td>{{ entity.startTime|date('Y-m-d H:i:s') }}</td>
+        </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

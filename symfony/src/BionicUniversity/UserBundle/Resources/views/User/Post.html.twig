@@ -1,0 +1,17 @@
+{% extends "BionicUniversityUserBundle::base.html.twig" %}
+{% form_theme form _self %}
+{% block content -%}
+    <h1 align="center" >Публикация нового события</h1>
+    <table bgcolor= "#c0c0c0" cellspacing= "0" cellpadding="5" border="1" align="center">
+        <tr><td align="center">
+                <br><br>
+    {% if is_granted('IS_AUTHENTICATED_FULLY') %}
+        <form class="sf">
+            {{ form_errors(form) }}
+            {{ form(form)}}
+        </form>
+    {% endif %}
+        <br>
+            </td></tr>
+    </table>
+{% endblock %}

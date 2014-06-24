@@ -44,18 +44,37 @@ class User implements UserInterface, \Serializable
      */
     private $posts;
 
-
     public function __construct()
     {
         $this->role = array('ROLE_USER');
-        $this->salt = base_convert(sha1(uniqid(mt_rand(), true)), 16,
-            36);
+        $this->salt = base_convert(
+            sha1(uniqid(mt_rand(), true)),
+            16,
+            36
+        );
     }
+
+    /**
+     * @param \BionicUniversity\UserBundle\Entity\Post $posts
+     */
+    public function setPosts($posts)
+    {
+        $this->posts = $posts;
+    }
+
+    /**
+     * @return \BionicUniversity\UserBundle\Entity\Post
+     */
+    public function getPosts()
+    {
+        return $this->posts;
+    }
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -101,7 +120,7 @@ class User implements UserInterface, \Serializable
     /**
      * Get password
      *
-     * @return string 
+     * @return string
      */
     public function getPassword()
     {
@@ -135,14 +154,16 @@ class User implements UserInterface, \Serializable
 
     public function setTermsAccepted($termsAccepted)
     {
-        $this->termsAccepted = (Boolean) $termsAccepted;
+        $this->termsAccepted = (Boolean)$termsAccepted;
     }
 
     public function serialize()
     {
-        return serialize(array(
+        return serialize(
+            array(
                 $this->id,
-            ));
+            )
+        );
     }
 
     public function unserialize($serialized)
@@ -151,4 +172,5 @@ class User implements UserInterface, \Serializable
             $this->id,
             ) = unserialize($serialized);
     }
+
 }

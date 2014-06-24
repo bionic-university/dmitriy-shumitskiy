@@ -1,24 +1,20 @@
 <html>
 {% block head %}
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <title>Registration</title>
-    <style>
-        body{
-            background-color: #31e8fa;
-        }
-        table
-        {
-            margin-top: 10%;
-            width: 50%;
-            height: 50%;
-        }
-    </style>
+    <title>Регистрация</title>
+    {% block stylesheets %}
+        {% stylesheets 'bundles/bionicuniversityuser/css/main.css' filter='cssrewrite' %}
+        <link rel="stylesheet" href="{{ asset_url }}" />
+        {% endstylesheets %}
+    {% endblock %}
 {% endblock %}
 {% block content %}
     <h1 align="center" >Регистрация нового пользователя</h1>
     <table bgcolor= "#c0c0c0" cellspacing= "0" cellpadding="5" border="1" align="center">
         <tr><td align="center">
-                <br><br>{{ form(form)}}<br>
+                <br><br>
+                {{ form(form)}}
+                    <br>
             </td></tr>
     </table>
 {% endblock %}

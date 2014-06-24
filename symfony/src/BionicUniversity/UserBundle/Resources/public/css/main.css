@@ -1,0 +1,45 @@
+body
+{
+    background-color: #31e8fa;
+}
+table
+{
+    margin-top: 5%;
+    width: 50%;
+    height: 50%;
+}
+ul li {display: inline;}
+ul { border-bottom:1px solid #000000; margin-left:0; padding:3px 0;}
+ul li a {text-decoration:none; margin-left:3px; border:1px solid #000000; padding: 3px 4px; border-bottom:0; background:#CEDEFF;}
+ul li a:link {color:#493;}
+ul li a:visited {color:#647;}
+ul li a:hover {color:#000; background:#6699FF; border-color:#227}
+
+.sf-notice { text-align: center; padding: 5px; background: #DFF2BF; border: 1px solid; color: #4F8A10; margin-bottom: 5px; }
+form.sf { font-size: 16px; }
+form.sf div { clear: left; margin-bottom: 5px; }
+form.sf label { float: left; margin-left: 50px; text-align: right; width: 150px; font-weight: bold; vertical-align: top; padding-top: 5px; }
+form.sf input[type="text"]
+{ width: 300px; margin-right: 50px;line-height: 26px; font-size: 16px; min-height: 26px; }
+form.sf input[type="number"]
+{ width: 300px; margin-right: 50px;line-height: 26px; font-size: 16px; min-height: 26px; }
+form.sf textarea { width: 300px; margin-right: 50px; height: 150px; line-height: 26px; font-size: 16px; }
+.timeatrr { text-align: center; margin-left: 24%; position: absolute; margin-top: 10px;}
+form.sf ul li { color: #ff0000; margin-bottom: 5px; }
+
+.sfchoice { width: 300px; margin-right: 50px; line-height: 22px; font-size: 12px; min-height: 22px; }
+.sf1choice { width: 300px; line-height: 22px; font-size: 12px; min-height: 22px; }
+.sftime { width: 300px; line-height: 26px; font-size: 12px; min-height: 26px; }
+.accebut { margin-left: 153px; width: 300px; line-height: 26px; font-size: 16px; min-height: 26px; margin-top: 15px; }
+.acce1but {  width: 300px; line-height: 22px; font-size: 12px; min-height: 22px; }
+
+.reg1
+{ width: 250px; margin-right: 70px;line-height: 20px; font-size: 12px; min-height: 20px;  margin-bottom: 5px;  text-align: center}
+.reg4
+{  width: 250px; margin-left: 150px; line-height: 22px; font-size: 12px; min-height: 22px;  margin-bottom: 5px; text-align: center;}
+.password-field
+{ width: 250px; margin-right: 70px;line-height: 20px; font-size: 12px; min-height: 20px;  margin-bottom: 5px; text-align: center}
+.regb1{float: left; margin-left: 70px; text-align: right; width: 150px; font-weight: bold; vertical-align: top; padding-top: 5px;}
+.regb2{float: left; margin-left: 70px; text-align: right; width: 150px; font-weight: bold; vertical-align: top; padding-top: 5px;}
+.regb3{float: left; margin-left: 70px; text-align: right; width: 150px; font-weight: bold; vertical-align: top; padding-top: 5px;}
+.log{font-weight: bold; font-size: 16px;}

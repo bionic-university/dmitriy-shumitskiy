@@ -1,6 +1,6 @@
 BionicUniversity\UserBundle\Entity\User:
     type: entity
-    table: users
+    table: user
     repositoryClass: BionicUniversity\UserBundle\Entity\UserRepository
     id:
         id:
@@ -26,4 +26,8 @@ BionicUniversity\UserBundle\Entity\User:
         posts:
             targetEntity: BionicUniversity\UserBundle\Entity\Post
             mappedBy: author
+    #oneToMany:
+        #subscribe:
+            #targetEntity: BionicUniversity\UserBundle\Entity\Subscribers
+           # mappedBy: subscriberId
     lifecycleCallbacks: {  }

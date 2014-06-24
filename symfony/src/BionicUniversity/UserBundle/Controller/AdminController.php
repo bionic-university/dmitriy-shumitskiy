@@ -4,10 +4,10 @@ namespace BionicUniversity\UserBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
-class User extends Controller
-{
+class AdminController extends Controller{
     public function indexAction()
     {
-        return $this->render('BionicUniversityUserBundle:User:index.html.twig');
+        return $this->render('BionicUniversityUserBundle:Admin:admin.html.twig');
     }
-}
+
+} 

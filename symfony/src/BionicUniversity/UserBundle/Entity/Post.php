@@ -35,11 +35,6 @@ class Post
     private $author;
 
     /**
-     * @var string
-     */
-    private $attachment;
-
-    /**
      * @var \DateTime
      */
     private $postTime;
@@ -47,6 +42,73 @@ class Post
      * @var string
      */
     private $phone;
+    /**
+     * @var bool
+     */
+    private $moderate = false;
+    /**
+     * @var string
+     */
+    private $subjects;
+    /**
+     * @var integer
+     */
+    private $userGo = 0;
+
+    /**
+     *
+     */
+    public function setUserGo()
+    {
+        $this->userGo = $this->userGo + 1;
+    }
+
+    /**
+     * @return int
+     */
+    public function getUserGo()
+    {
+        return $this->userGo;
+    }
+
+
+    /**
+     * @param string $subjects
+     */
+    public function setSubjects($subjects)
+    {
+        $this->subjects = $subjects;
+    }
+
+    /**
+     * @return string
+     */
+    public function getSubjects()
+    {
+        return $this->subjects;
+    }
+
+    /**
+     * @param boolean $moderate
+     */
+    public function setModerate($moderate)
+    {
+        $this->moderate = $moderate;
+    }
+
+    /**
+     * @return boolean
+     */
+    public function getModerate()
+    {
+        return $this->moderate;
+    }
+
+
+    public function __construct()
+    {
+        $this->postTime = new \DateTime();
+    }
 
     /**
      * @param string $phone
@@ -165,29 +227,6 @@ class Post
     public function getAuthor()
     {
         return $this->author;
-    }
-
-    /**
-     * Set attachment
-     *
-     * @param string $attachment
-     * @return Post
-     */
-    public function setAttachment($attachment)
-    {
-        $this->attachment = $attachment;
-
-        return $this;
-    }
-
-    /**
-     * Get attachment
-     *
-     * @return string 
-     */
-    public function getAttachment()
-    {
-        return $this->attachment;
     }
 
     /**
