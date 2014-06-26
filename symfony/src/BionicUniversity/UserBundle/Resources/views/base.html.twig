@@ -16,8 +16,8 @@
             <li><a href="{{ path('write_post') }}">Публикация</a></li>
             <li><a href="{{ path('my_post') }}">Просмотр моих публикаций</a></li>
             <li><a href="{{ path('all_post') }}">Все публикации</a></li>
-            <li><a href="#">Подписки</a></li>
-            <li><a href="#">Я иду</a></li>
+            <li><a href="{{ path('me_subscribe') }}">Подписки </a></li>
+            <li><a href="{{ path('my_subscribe') }}">Подписчики </a></li>
             {% if is_granted('ROLE_ADMIN') %}
             <li><a href="{{ path('post_moderate') }}">На модерации</a></li>
             {% endif %}
@@ -33,4 +33,5 @@
 {% endblock %}
 {% block content %}
 {% endblock %}
+<div align="center"><ul></ul><br>&copy Сделал Дмитрий Шумицкий для проэкта в Bionic University.</div>
 </html>

@@ -55,6 +55,7 @@ class Post
      */
     private $userGo = 0;
 
+
     /**
      *
      */

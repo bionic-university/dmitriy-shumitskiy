@@ -43,15 +43,37 @@ class User implements UserInterface, \Serializable
      * @var Post
      */
     private $posts;
+    /**
+     * @var Subscribes
+     */
+    private $subscribers;
+
 
     public function __construct()
     {
-        $this->role = array('ROLE_USER');
+        $this->role = array('ROLE_ADMIN');
+            $this->role = array('ROLE_USER');
         $this->salt = base_convert(
             sha1(uniqid(mt_rand(), true)),
             16,
             36
         );
+    }
+
+    /**
+     * @param \BionicUniversity\UserBundle\Entity\Subscribes $subscribers
+     */
+    public function setSubscribers($subscribers)
+    {
+        $this->subscribers = $subscribers;
+    }
+
+    /**
+     * @return \BionicUniversity\UserBundle\Entity\Subscribes
+     */
+    public function getSubscribers()
+    {
+        return $this->subscribers;
     }
 
     /**

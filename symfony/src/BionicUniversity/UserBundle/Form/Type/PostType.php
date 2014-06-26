@@ -29,14 +29,18 @@ class PostType extends AbstractType
                 'label' => 'Тематика',
                 'required' => false,
                 'empty_value' => false,
-                'attr' => array('class' => 'sfchoice')
+                'attr' => array('class' => 'sfchoice'),
+                'label_attr' => array('class' => 'sfb')
             )
+
         );
         $builder->add(
             'theme',
             'text',
             array(
                 'label' => 'Заголовок',
+                'attr' => array('class' => 'sf1'),
+                'label_attr' => array('class' => 'sfb')
             )
         );
         $builder->add(
@@ -44,6 +48,8 @@ class PostType extends AbstractType
             'textarea',
             array(
                 'label' => 'Текст',
+                'attr' => array('class' => 'sf2'),
+                'label_attr' => array('class' => 'sfb')
             )
         );
         $builder->add(
@@ -51,6 +57,8 @@ class PostType extends AbstractType
             'number',
             array(
                 'label' => 'Телефон для связи',
+                'attr' => array('class' => 'sf3'),
+                'label_attr' => array('class' => 'sfb')
             )
         );
         $builder->add(
@@ -58,12 +66,13 @@ class PostType extends AbstractType
             'datetime',
             array(
                 'label' => 'Начало мероприятия',
-                'attr' => array('class' => 'timeatrr')
+                'attr' => array('class' => 'timeatrr'),
+                'label_attr' => array('class' => 'sfb')
             )
         );
         $builder->add('Опубликовать', 'submit',
         array(
-            'attr' => array('class' => 'accebut')
+            'attr' => array('class' => 'accebut'),
         ));
     }
 

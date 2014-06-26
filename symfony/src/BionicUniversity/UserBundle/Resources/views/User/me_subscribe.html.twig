@@ -1,0 +1,13 @@
+{% extends "BionicUniversityUserBundle::base.html.twig" %}
+{% block content -%}
+    <h1 align="center">Список людей на которых вы подписаны</h1>
+    <table class="records_list" bgcolor= "#c0c0c0" cellspacing= "0" cellpadding="5" border="1" align="center">
+        <tbody>
+        {% for entity in entities %}
+            <tr>
+                <td><ul><li>{{ entity.authorPost.email }}</li></ul></td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

@@ -9,12 +9,14 @@ BionicUniversity\UserBundle\Entity\Subscribes:
             generator:
                 strategy: AUTO
     fields:
-        subscriberId:
-            type: integer
+        subscriber:
+            type: string
         authorId:
             type: integer
-    #manyToOne:
-       # subscriberId:
-            #targetEntity: BionicUniversity\UserBundle\Entity\User
-            #inversedBy: subscribe
+
+
+    manyToOne:
+        authorPost:
+            targetEntity: BionicUniversity\UserBundle\Entity\User
+            inversedBy: subscribers
     lifecycleCallbacks: {  }

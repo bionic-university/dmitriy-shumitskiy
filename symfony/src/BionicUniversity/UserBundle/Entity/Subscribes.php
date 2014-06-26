@@ -15,20 +15,39 @@ class Subscribes
     private $id;
 
     /**
-     * @var integer
+     * @var String
      */
-    private $subscriberId;
+    private $subscriber;
 
     /**
      * @var integer
      */
     private $authorId;
 
+    private $authorPost;
+
+    /**
+     * @param $authorPost
+     */
+    public function setAuthorPost($authorPost)
+    {
+        $this->authorPost = $authorPost;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getAuthorPost()
+    {
+        return $this->authorPost;
+    }
+
+
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -36,26 +55,26 @@ class Subscribes
     }
 
     /**
-     * Set subscriberId
+     * Set subscriber
      *
-     * @param integer $subscriberId
+     * @param integer $subscriber
      * @return Subscribes
      */
-    public function setSubscriberId($subscriberId)
+    public function setSubscriber($subscriber)
     {
-        $this->subscriberId = $subscriberId;
+        $this->subscriber = $subscriber;
 
         return $this;
     }
 
     /**
-     * Get subscriberId
+     * Get subscriber
      *
-     * @return integer 
+     * @return string
      */
-    public function getSubscriberId()
+    public function getSubscriber()
     {
-        return $this->subscriberId;
+        return $this->subscriber;
     }
 
     /**
@@ -74,7 +93,7 @@ class Subscribes
     /**
      * Get authorId
      *
-     * @return integer 
+     * @return integer
      */
     public function getAuthorId()
     {

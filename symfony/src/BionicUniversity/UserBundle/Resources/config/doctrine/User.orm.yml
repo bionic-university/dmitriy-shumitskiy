@@ -26,8 +26,8 @@ BionicUniversity\UserBundle\Entity\User:
         posts:
             targetEntity: BionicUniversity\UserBundle\Entity\Post
             mappedBy: author
-    #oneToMany:
-        #subscribe:
-            #targetEntity: BionicUniversity\UserBundle\Entity\Subscribers
-           # mappedBy: subscriberId
+    oneToMany:
+        subscribers:
+            targetEntity: BionicUniversity\UserBundle\Entity\Subscribes
+            mappedBy: authorPost
     lifecycleCallbacks: {  }

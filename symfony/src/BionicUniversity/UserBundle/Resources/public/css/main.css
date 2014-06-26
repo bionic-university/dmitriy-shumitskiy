@@ -15,17 +15,12 @@ ul li a:link {color:#493;}
 ul li a:visited {color:#647;}
 ul li a:hover {color:#000; background:#6699FF; border-color:#227}
 
-.sf-notice { text-align: center; padding: 5px; background: #DFF2BF; border: 1px solid; color: #4F8A10; margin-bottom: 5px; }
-form.sf { font-size: 16px; }
-form.sf div { clear: left; margin-bottom: 5px; }
-form.sf label { float: left; margin-left: 50px; text-align: right; width: 150px; font-weight: bold; vertical-align: top; padding-top: 5px; }
-form.sf input[type="text"]
-{ width: 300px; margin-right: 50px;line-height: 26px; font-size: 16px; min-height: 26px; }
-form.sf input[type="number"]
-{ width: 300px; margin-right: 50px;line-height: 26px; font-size: 16px; min-height: 26px; }
-form.sf textarea { width: 300px; margin-right: 50px; height: 150px; line-height: 26px; font-size: 16px; }
+
+.sfb{ float: left; margin-left: 50px; text-align: right; width: 150px; font-weight: bold; vertical-align: top; padding-top: 5px; }
+.sf1{ width: 300px; margin-right: 50px;line-height: 26px; font-size: 16px; min-height: 26px; }
+.sf3{ width: 300px; margin-right: 50px;line-height: 26px; font-size: 16px; min-height: 26px; }
+.sf2{ width: 300px; margin-right: 50px; height: 150px; line-height: 26px; font-size: 16px; }
 .timeatrr { text-align: center; margin-left: 24%; position: absolute; margin-top: 10px;}
-form.sf ul li { color: #ff0000; margin-bottom: 5px; }
 
 .sfchoice { width: 300px; margin-right: 50px; line-height: 22px; font-size: 12px; min-height: 22px; }
 .sf1choice { width: 300px; line-height: 22px; font-size: 12px; min-height: 22px; }

@@ -3,6 +3,8 @@
 namespace BionicUniversity\UserBundle\Controller;
 
 use BionicUniversity\UserBundle\Entity\Post;
+use BionicUniversity\UserBundle\Entity\Subscribes;
+use BionicUniversity\UserBundle\Entity\UserGo;
 use BionicUniversity\UserBundle\Form\Type\PostType;
 use BionicUniversity\UserBundle\Form\Type\FilterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -24,10 +26,11 @@ class UserController extends Controller
 
             if ($form->isValid()) {
                 $projectEm = $this->get('doctrine.orm.default_entity_manager');
+                $post->setAuthor($this->getUser());
                 $projectEm->persist($post);
                 $projectEm->flush();
 
-                return $this->redirect("/user");
+                return $this->redirect("all_post");
             }
         }
         return $this->render(
@@ -137,7 +140,7 @@ class UserController extends Controller
             )
         );
 
-        $form->add('submit', 'submit', array('label' => 'Update'));
+        $form->add('submit', 'submit', array('label' => 'Обновить', 'attr' => array('class' => 'accebut')));
 
         return $form;
     }
@@ -213,7 +216,7 @@ class UserController extends Controller
         return $this->createFormBuilder()
             ->setAction($this->generateUrl('post_delete', array('id' => $id)))
             ->setMethod('DELETE')
-            ->add('submit', 'submit', array('label' => 'Delete'))
+            ->add('submit', 'submit', array('label' => 'Удалить', 'attr' => array('class' => 'accebut')))
             ->getForm();
     }
 
@@ -293,30 +296,64 @@ class UserController extends Controller
         if (!$entity2) {
             throw $this->createNotFoundException('Unable to find Post entity.');
         }
-        $entity = $em->getRepository('BionicUniversityUserBundle:UserGo')->findByUserId($idUser)->findByPostId(
-            $id
-        )->findByStatus(true);
+        $entity = $em->getRepository('BionicUniversityUserBundle:UserGo')->findBy(array('userId' => $idUser, 'postId' => $id, 'status' => true));
         if ($entity == true) {
             throw $this->createNotFoundException('Вы уже идете.');
         } else {
-            $entity->setUserId($idUser);
-            $entity->setPostId($id);
-            $entity->setStatus(true);
+            $user_go = new UserGo();
+            $user_go->setUserId($idUser);
+            $user_go->setPostId($id);
+            $user_go->setStatus(true);
             $entity2->setUserGo();
+            $em->persist($user_go);
             $em->flush();
         }
         return $this->redirect($this->generateUrl('all_post'));
     }
 
-    public function subscribeAction($author)
+    public function subscribeAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $idUser = $this->getUser()->getId();
-        $entity = $em->getRepository('BionicUniversityUserBundle:Subscribes');
-            $entity->setSubscriberId($idUser);
-            $entity->setAuthorId($author);
+        $userEmail = $this->getUser()->getEmail();
+        $entity1 = $em->getRepository('BionicUniversityUserBundle:Subscribes')->findBy(array('subscriber' => $userEmail, 'authorId' => $id));
+        $entity3 = $em->getRepository('BionicUniversityUserBundle:User')->find($id);
+        if ($entity1 == true) {
+            throw $this->createNotFoundException('Вы уже подписаны.');
+        } else {
+            $subscriber = new Subscribes();
+            $subscriber->setSubscriber($userEmail);
+            $subscriber->setAuthorId($id);
+            $subscriber->setAuthorPost($entity3);
+            $em->persist($subscriber);
             $em->flush();
+        }
         return $this->redirect($this->generateUrl('all_post'));
+    }
+
+    public function showSubscribeAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $userEmail = $this->getUser()->getEmail();
+        $entities = $em->getRepository('BionicUniversityUserBundle:Subscribes')->findBySubscriber($userEmail);
+        return $this->render(
+            'BionicUniversityUserBundle:User:me_subscribe.html.twig',
+            array(
+                'entities' => $entities
+            )
+        );
+    }
+
+    public function showSubscribersAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $id = $this->getUser()->getId();
+        $entities = $em->getRepository('BionicUniversityUserBundle:Subscribes')->findByAuthorId($id);
+        return $this->render(
+            'BionicUniversityUserBundle:User:my_subscribers.html.twig',
+            array(
+                'entities' => $entities
+            )
+        );
     }
 
 }

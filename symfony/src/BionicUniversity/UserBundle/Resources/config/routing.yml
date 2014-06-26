@@ -50,10 +50,16 @@ post_push:
     pattern:  /moderate/{id}
     defaults: { _controller: "BionicUniversityUserBundle:User:moderate" }
 user_go:
-    pattern:  /show/{id}
+    pattern:  /go/{id}
     defaults: { _controller: "BionicUniversityUserBundle:User:userGo" }
 user_subscribe:
-    pattern:  /show/{id}
+    pattern:  /subscribe/{id}
     defaults: { _controller: "BionicUniversityUserBundle:User:subscribe" }
+me_subscribe:
+    pattern:  /subscribe
+    defaults: { _controller: "BionicUniversityUserBundle:User:showSubscribe" }
+my_subscribe:
+    pattern:  /subscribers
+    defaults: { _controller: "BionicUniversityUserBundle:User:showSubscribers" }
 
 

@@ -24,7 +24,7 @@
         </tr>
         <tr>
             <th>Автор</th>
-            <td>{{ entity.author }}</td>
+            <td>{{ entity.author.email  }}</td>
         </tr>
 
         </tbody>
@@ -37,7 +37,7 @@
                     <a href="{{ path('user_go', { 'id': entity.id }) }}">Я иду!</a>
                 </li>
                 <li>
-                    <a href="{{ path('user_subscribe', { 'id': entity.id }) }}">Подписаться на автора</a>
+                    <a href="{{ path('user_subscribe', { 'id': entity.author.id }) }}">Подписаться на автора</a>
                 </li>
             {% endif %}
         </ul>
