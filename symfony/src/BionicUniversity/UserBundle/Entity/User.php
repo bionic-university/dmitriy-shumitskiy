@@ -51,7 +51,6 @@ class User implements UserInterface, \Serializable
 
     public function __construct()
     {
-        $this->role = array('ROLE_ADMIN');
             $this->role = array('ROLE_USER');
         $this->salt = base_convert(
             sha1(uniqid(mt_rand(), true)),
